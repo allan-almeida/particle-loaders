@@ -1,0 +1,15 @@
+{
+  "extends": "react-app",
+  "env": {
+      "es6": true,
+      "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true,
+          "classes": true
+      },
+      "sourceType": "module"
+  }
+}
