@@ -7,7 +7,9 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <Navbar />
+          <Navbar
+
+          />
         </div>
       </div>
     )
