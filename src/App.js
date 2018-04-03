@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import brand from './images/AMPP_logo.svg'
-// import './App.css';
+import React from 'react'
 // Components
 import Navbar from './components/Navbar'
 
-class App extends Component {
-  render() {
+class App extends React.Component {
+  render () {
     return (
       <div>
-        <div className="App">
+        <div>
           <Navbar />
-          <img src={brand} />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
