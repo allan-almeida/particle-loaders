@@ -1,13 +1,7 @@
 import React from 'react'
 import styled, { withTheme } from 'styled-components'
 import { media } from '../styles'
-// import Dropdown from './Dropdown'
-import Burger from '../components/Burger'
-
-console.log(media)
-// const TRANSITION = `transform 0.2s ease-in-out, opacity 0.2s ease-in-out`
-const TRANSITION = `all 400ms cubic-bezier(0.39, 0.575, 0.565, 1)`
-const NAVTRANSITION = `all 250ms cubic-bezier(0.39, 0.575, 0.565, 1)`
+import Burger from './Burger'
 
 const Container = styled.nav`
   position: fixed;
@@ -21,7 +15,7 @@ const Container = styled.nav`
   background: #FFF;
   z-index: 2;
   flex-wrap: wrap;
-  transition: ${NAVTRANSITION};
+  transition: ${props => props.theme.transitions.navbarScroll};
   padding: ${props => props.scrolled ? `1.5em 12.5vw` : `3em 12.5vw`};
   background: ${props => props.scrolled ? `#FFF` : `transparent`};
   box-shadow: ${props => props.scrolled ? `4px 4px 11px 0 rgba(0,0,0,.14)` : ``};
@@ -45,7 +39,7 @@ const List = styled.ul`
 
 const ListContainer = styled.div`
   display: block;
-  transition: ${TRANSITION};
+  transition: ${props => props.theme.transitions.navbarToggle};
   ${media.phone`
     max-height: ${props => props.visible ? `202px` : `0px`};
     flex-basis: 100%;
@@ -69,8 +63,6 @@ const ListItem = styled.li`
     padding: 16px 0;
   `}
   > a {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 14px;
     font-weight: normal;
     color: black;
     text-decoration: none;
@@ -122,21 +114,6 @@ class Navbar extends React.Component {
     })
   }
 
-  _linkMedium = () => {
-    console.info('analytics')
-    console.info('link to medium @brightnetwork')
-  }
-
-  _linkWhitePaper = () => {
-    console.info('analytics')
-    console.info('link to whitepaper @brightnetwork')
-  }
-
-  _linkTelegram = () => {
-    console.info('analytics')
-    console.info('link to telegram t.me/brightnetwork')
-  }
-
   toggle = () => {
     this.setState({
       showMenu: !this.state.showMenu
@@ -147,15 +124,16 @@ class Navbar extends React.Component {
     return (
       <Container scrolled={this.state.scrolled}>
         <a to='/'>
-          <h1>brand</h1>
+          <h1>Allan Almeida</h1>
         </a>
         <Toggler onClick={this.toggle}>
           <Burger animate={this.state.showMenu}/>
         </Toggler>
         <ListContainer visible={this.state.showMenu}>
           <List>
-            <ListItem><a onClick={this._linkWhitePaper}>Whitepaper</a></ListItem>
-            <ListItem><a onClick={this._linkMedium}>Blog</a></ListItem>
+            <ListItem><a>Link 1</a></ListItem>
+            <ListItem><a>Link 2</a></ListItem>
+            <ListItem><a>Link 3</a></ListItem>
           </List>
         </ListContainer>
       </Container>

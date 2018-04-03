@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-// const TRANSITION = `transform 0.2s ease-in-out, opacity 0.2s ease-in-out`
-const TRANSITION = `all 400ms cubic-bezier(0.39, 0.575, 0.565, 1)`
-
 const InlineSvg = styled.svg`
   display: inline-block;
   outline: none;
@@ -12,7 +9,7 @@ const Top = styled.path`
   transform: rotate(0) translateY(0) translateX(0);
   opacity: 1;
   transform-origin: 18px 5px;
-  transition: ${TRANSITION};
+  transition: ${props => props.theme.transitions.navbarToggle};
   transform: ${props => props.move ? `rotate(-45deg) translateY(0em) translateX(0em)` : ``};
 `
 
@@ -28,7 +25,7 @@ const Bottom = styled.path`
   transform: rotate(0) translateY(0) translateX(0);
   opacity: 1;
   transform-origin: 17px 12px;
-  transition: ${TRANSITION};
+  transition: ${props => props.theme.transitions.navbarToggle};
   transform: ${props => props.move ? `rotate(45deg) translateY(0em) translateX(0em)` : ``};
 `
 
