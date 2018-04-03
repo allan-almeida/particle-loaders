@@ -1,16 +1,13 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
-import { theme } from './styles'
-// Components
-import Navbar from './components/Navbar'
+import Loader from './components/Loader'
+import Routes from './routes'
 
 class App extends React.Component {
+  state = {
+    finishedLoading: false
+  }
   render () {
-    return (
-      <ThemeProvider theme={theme}>
-        <Navbar />
-      </ThemeProvider>
-    )
+    return this.state.finishedLoading ? <Routes /> : <Loader />
   }
 }
 
