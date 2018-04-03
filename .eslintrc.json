@@ -1,15 +1,21 @@
 {
-  "extends": "react-app",
-  "env": {
-      "es6": true,
-      "node": true
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-      "ecmaFeatures": {
-          "jsx": true,
-          "classes": true
-      },
-      "sourceType": "module"
+    "extends": ["standard"],
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "classes": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "react/jsx-uses-vars": 1
+    }
   }
-}
