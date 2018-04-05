@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { withTheme } from 'styled-components'
 import { media } from '../styles'
 import Burger from './Burger'
+import brandIcon from '../images/brand/brandIcon.png'
 
 const Container = styled.nav`
   position: fixed;
@@ -70,6 +71,11 @@ const ListItem = styled.li`
   }
 `
 
+const Title = styled.h1`
+  font-size: 3em;
+  font-weight: 100;
+`
+
 class Navbar extends React.Component {
   // animate nav so when user scrolls down, background changes from transparent to white, vertical padding reduces
   // and a box shadow appears
@@ -124,7 +130,8 @@ class Navbar extends React.Component {
     return (
       <Container scrolled={this.state.scrolled}>
         <a to='/'>
-          <h1>Allan Almeida</h1>
+          <Title>Allan Almeida</Title>
+          <img src={brandIcon} alt='brand' />
         </a>
         <Toggler onClick={this.toggle}>
           <Burger animate={this.state.showMenu}/>
