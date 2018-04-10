@@ -1,8 +1,7 @@
 import React from 'react'
 import styled, { withTheme } from 'styled-components'
-import { media } from '../styles'
+import { media } from '../../styles'
 import Burger from './Burger'
-import brandIcon from '../images/brand/brandIcon.png'
 
 const Container = styled.nav`
   position: fixed;
@@ -131,7 +130,6 @@ class Navbar extends React.Component {
       <Container scrolled={this.state.scrolled}>
         <a to='/'>
           <Title>Allan Almeida</Title>
-          <img src={brandIcon} alt='brand' />
         </a>
         <Toggler onClick={this.toggle}>
           <Burger animate={this.state.showMenu}/>

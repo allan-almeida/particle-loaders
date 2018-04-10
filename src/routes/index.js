@@ -1,13 +1,14 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../styles'
-import Navbar from '../components/Navbar'
+// routes
+import Home from './Home'
 
 class Routes extends React.Component {
   render () {
     return (
       <ThemeProvider theme={theme}>
-        <Navbar />
+        <Home />
       </ThemeProvider>
     )
   }
