@@ -33,6 +33,9 @@ const SubTitle = styled.h2`
 const MailLink = styled.a`
   text-decoration: none;
   color: black;
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 class Home extends React.Component {
